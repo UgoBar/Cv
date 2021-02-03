@@ -181,6 +181,8 @@ li i {
     background: var(--grey);
     padding:3rem;
     text-align: center;
+    border-bottom: 2rem solid var(--green);
+    border-radius: 3rem;
 }
 
 

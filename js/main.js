@@ -3,10 +3,10 @@
 /***********************************************************
  * --------------------- BURGER MENU ----------------------
  ***********************************************************/
-let burgerButton = document.querySelector('#burger');
-let crossButton  = document.querySelector('#cross');
-let navbarMobile = document.querySelector('#navbar-mobile');
-let main         = document.querySelector('main');
+const burgerButton = document.querySelector('#burger');
+const crossButton  = document.querySelector('#cross');
+const navbarMobile = document.querySelector('#navbar-mobile');
+const main         = document.querySelector('main');
 
 burgerButton.addEventListener('click', displayNavbar);
 crossButton.addEventListener('click', hideNavbar);
@@ -25,3 +25,11 @@ function hideNavbar() {
     crossButton.classList.add('hidden');
     navbarMobile.classList.remove('mobile-nav-active');
 }
+
+const home = document.querySelector('#home');
+const about = document.querySelector('#about');
+const skills = document.querySelector('#skills');
+const resume = document.querySelector('#resume');
+const projects = document.querySelector('#projects');
+
+console.log(home.clientHeight);
