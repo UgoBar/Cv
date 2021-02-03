@@ -1,0 +1,228 @@
+/*
+██╗  ██╗ ██████╗ ███╗   ███╗███████╗
+██║  ██║██╔═══██╗████╗ ████║██╔════╝
+███████║██║   ██║██╔████╔██║█████╗  
+██╔══██║██║   ██║██║╚██╔╝██║██╔══╝  
+██║  ██║╚██████╔╝██║ ╚═╝ ██║███████╗
+╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝
+*/
+#home {
+    width:100%;
+    height:100vh;
+    background: url('../img/photo-test.jpg') top right no-repeat;;
+    background-size: cover;
+}
+
+#home h1, #home p {
+    color:white;
+    text-align:center;
+}
+
+#home p {
+    font-size:2rem;
+    font-weight:bold;
+}
+
+
+/*
+ █████╗ ██████╗  ██████╗ ██╗   ██╗████████╗
+██╔══██╗██╔══██╗██╔═══██╗██║   ██║╚══██╔══╝
+███████║██████╔╝██║   ██║██║   ██║   ██║   
+██╔══██║██╔══██╗██║   ██║██║   ██║   ██║   
+██║  ██║██████╔╝╚██████╔╝╚██████╔╝   ██║   
+╚═╝  ╚═╝╚═════╝  ╚═════╝  ╚═════╝    ╚═╝   
+*/
+.section-title {
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+li i {
+    font-size:1.6rem;
+}
+/*
+███████╗██╗  ██╗██╗██╗     ██╗     ███████╗
+██╔════╝██║ ██╔╝██║██║     ██║     ██╔════╝
+███████╗█████╔╝ ██║██║     ██║     ███████╗
+╚════██║██╔═██╗ ██║██║     ██║     ╚════██║
+███████║██║  ██╗██║███████╗███████╗███████║
+╚══════╝╚═╝  ╚═╝╚═╝╚══════╝╚══════╝╚══════╝
+*/
+.skills .progress {
+    height: 50px;
+    display: block;
+    background: none;
+}
+
+.progress {
+    display: flex;
+    height: 1rem;
+    overflow: hidden;
+    font-size: .75rem;
+    background-color: #e9ecef;
+}
+
+.skill {
+	padding: 10px 0;
+	margin: 0 0 6px 0;
+    text-transform: uppercase;
+    font-size:1.4rem;
+	font-weight: 600;
+	font-family: var(--main);
+	color: #45505b;
+}
+
+.skill i {
+    font-style: normal;
+    font-size: 1.6rem;
+    padding-bottom:10px;
+}
+
+.skills .progress-bar {
+	height: 10px;
+	transition: .9s;
+    background-color: var(--green);
+    border-radius:.5rem;
+    padding-top: 1rem;
+}
+
+.skills .progress-bar-wrap {
+    background: #f2f3f5;
+    border-radius:.5rem;
+    margin-top: 1rem;
+}
+
+.css-bar {
+    width:90%;
+}
+
+.js-bar {
+    width:75%;
+}
+
+.php-bar {
+    width:80%;
+}
+
+.cms-bar {
+    width:90%;
+}
+
+.ps-bar {
+    width:65%
+}
+/* 
+██████╗ ███████╗███████╗██╗   ██╗███╗   ███╗███████╗
+██╔══██╗██╔════╝██╔════╝██║   ██║████╗ ████║██╔════╝
+██████╔╝█████╗  ███████╗██║   ██║██╔████╔██║█████╗  
+██╔══██╗██╔══╝  ╚════██║██║   ██║██║╚██╔╝██║██╔══╝  
+██║  ██║███████╗███████║╚██████╔╝██║ ╚═╝ ██║███████╗
+╚═╝  ╚═╝╚══════╝╚══════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝
+*/
+.resume-title {
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: #45505b;
+}
+
+.resume-item {
+    padding-left: 2rem;
+    padding-bottom:1.2rem;
+	border-left: 2px solid var(--green);
+    position: relative;
+}
+
+.resume .resume-item::before {
+    content: "";
+    position: absolute;
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 5rem;
+    left: -9px;
+    top: 0;
+    background: #fff;
+    border: 2px solid var(--green);
+}
+
+.resume-item h5 {
+    background:var(--grey);
+    padding: 0.5px 1.5rem;
+    margin-top:1.5rem;
+    display: inline-block;
+    font-weight: 600;
+}
+
+.resume-item h4 {
+    line-height: 18px;
+}
+/* 
+██████╗ ██████╗  ██████╗      ██╗███████╗ ██████╗████████╗
+██╔══██╗██╔══██╗██╔═══██╗     ██║██╔════╝██╔════╝╚══██╔══╝
+██████╔╝██████╔╝██║   ██║     ██║█████╗  ██║        ██║   
+██╔═══╝ ██╔══██╗██║   ██║██   ██║██╔══╝  ██║        ██║   
+██║     ██║  ██║╚██████╔╝╚█████╔╝███████╗╚██████╗   ██║   
+╚═╝     ╚═╝  ╚═╝ ╚═════╝  ╚════╝ ╚══════╝ ╚═════╝   ╚═╝   
+*/
+#projects .container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+#projects h2 {
+    width:100%;
+}
+
+#projects article {
+    margin-top:3rem;
+    width:90%;
+    background: var(--grey);
+    padding:3rem;
+    text-align: center;
+}
+
+
+/* ************************************
+************* RESPONSIVE **************
+************************************ */
+
+@media (min-width: 768px)
+{
+    #projects article {
+        width:48%;
+        margin-top: 2rem;
+    }
+    #projects .container article:nth-child(even) {
+        margin-right:2rem;
+    }
+}
+
+@media (min-width: 992px)
+{
+    #skills .container,
+    #resume .container {
+        display:flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+    #skills .section-title
+    #resume .section-title {
+        width:100%;
+    }
+
+    .skills-col, .resume-col {
+        width:48%;
+    }
+
+    .skills-col:first-of-type {
+        padding-right: 2rem;
+    }
+}
+
+@media (min-width: 1052px)
+{
+
+}
