@@ -8,7 +8,8 @@
 
 html {
 	font-size: 62.5%; /* 1rem = 10px (la formule est 10/16*100) la taille par défaut étant 16px */
-	box-sizing: border-box;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -366,6 +367,7 @@ a {
     -webkit-appearance: none;
     background-color: transparent;
     border: none;
+    transition: all 0.5s;
 }
 
 .nav-menu span {
