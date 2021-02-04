@@ -42,7 +42,6 @@
     text-align: center;
     padding-bottom: 2rem;
 }
-
 li i {
     font-size:1.6rem;
 }
@@ -216,6 +215,28 @@ li i {
 
 @media (min-width: 768px)
 {
+    #about .container {
+        display:flex;
+        flex-flow:row wrap;
+        justify-content: space-between;
+    }
+    #about .container .section-title {
+        width: 100%;
+    }
+
+    #about .container h3 {
+        width: 100%;
+    }
+
+    #about .container h3 p {
+        width:100%;
+    }
+
+    #about .container ul {
+        width:50%;
+        padding-right:2rem;
+    }
+
     #projects article {
         width:48%;
         margin-top: 2rem;
@@ -259,5 +280,13 @@ li i {
         font-weight: 600;
         width: 33%;
         margin: 1.5rem auto;
+    }
+
+    #about .container ul {
+        width:33%;
+    }
+
+    #about .container ul:last-of-type {
+        width:30%;
     }
 }
