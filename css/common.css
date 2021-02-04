@@ -18,7 +18,12 @@ body {
 }
 
 a {
-	text-decoration:none;
+    text-decoration:none;
+    transition: all .5s;
+}
+
+a:focus-visible {
+    outline: none;
 }
 
 figure {
@@ -240,6 +245,10 @@ img {
 .btn-gradient:hover {
     box-shadow: 0 8px 48px 0 rgba(0,0,0,.1);
 }
+
+a:hover {
+    color: var(--green);
+}
 /******** VISIBILITY ********/
 .hidden {
     display: none;
@@ -360,9 +369,9 @@ a {
 #burger, #cross {
 	color: white;
 	position: fixed;
-	right: 3%;
+	right: 0;
 	cursor: pointer;
-    top: 1%;
+    top: .5%;
     z-index:500;
     -webkit-appearance: none;
     background-color: transparent;
@@ -401,21 +410,18 @@ footer a:first-of-type, footer p {
 footer a:first-of-type {
     color:white;
     margin-bottom:2.5rem;
+    display:block
 }
 
-footer a:last-of-type {
-    background-color: white;
-    display:block;
-    padding-left: .3rem;
-    padding-top: .9rem;
-    margin:2rem auto 0 auto;
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
+footer div a i {
+    font-size:4rem;
+    color:white;
+    transition: all .5s;
+    padding:.5rem;
 }
 
-footer a i {
-    font-size:1.8rem;
+footer div a:hover, footer div a i:hover {
+    color: var(--black);
 }
 /* *****************************************************************
 ********************************************************************
@@ -424,6 +430,11 @@ footer a i {
 ***************************************************************** */
 @media (min-width: 768px)
 {
+    /**** NAVBAR ****/
+    #navbar-mobile {
+        display:none;
+    }
+
     .container {
         max-width: 70%;
     }

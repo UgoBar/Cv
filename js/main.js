@@ -31,16 +31,39 @@ function hideNavbar() {
  * -------------------- SCROLL SPY -------------------------
  ***********************************************************/
 
- /** LIENS */
-const homeLink     = document.querySelector('#homeLink');
-const aboutLink    = document.querySelector('#aboutLink');
-const skillsLink   = document.querySelector('#skillsLink');
-const resumeLink   = document.querySelector('#resumeLink');
-const projectsLink = document.querySelector('#projectsLink');
-/** Je range les liens dans un tableau */
-const linkSections = [homeLink, aboutLink, skillsLink, resumeLink, projectsLink];
+ /** LIENS NAVBAR MOBILE */
+const mobileHomeLink     = document.querySelector('#homeLink');
+const mobileAboutLink    = document.querySelector('#aboutLink');
+const mobileSkillsLink   = document.querySelector('#skillsLink');
+const mobileResumeLink   = document.querySelector('#resumeLink');
+const mobileProjectsLink = document.querySelector('#projectsLink');
+ /** LIENS NAVBAR MOBILE */
+ const desktopHomeLink     = document.querySelector('.homeLink');
+ const desktopAboutLink    = document.querySelector('.aboutLink');
+ const desktopSkillsLink   = document.querySelector('.skillsLink');
+ const desktopResumeLink   = document.querySelector('.resumeLink');
+ const desktopProjectsLink = document.querySelector('.projectsLink');
+
+ /** Je range les liens dans un tableau */
+const linkSections = [
+    /** Liens mobile */
+    mobileHomeLink,
+    mobileAboutLink,
+    mobileSkillsLink,
+    mobileResumeLink,
+    mobileProjectsLink,
+
+    /** liens desktop */
+    desktopHomeLink,
+    desktopAboutLink,
+    desktopSkillsLink,
+    desktopResumeLink, 
+    desktopProjectsLink
+];
+
 /** J'attribue la classe active au chargement de la page */
-homeLink.classList.add('active');
+mobileHomeLink.classList.add('active');
+desktopHomeLink.classList.add('active');
 
 /** RECUPERATION DES SECTIONS */
 const home     = document.querySelector('#home');
@@ -65,7 +88,8 @@ window.onscroll = () => {
 
     if (scrollPosition < homeHeight) {
         linkSections.forEach(element => element.classList.remove('active'));
-        homeLink.classList.add('active');
+        mobileHomeLink.classList.add('active');
+        desktopHomeLink.classList.add('active');
 
         /** Sur toute la hauteur de la section home le burger et la croix sont blancs */
         burgerButton.style.color = 'white';
@@ -77,23 +101,27 @@ window.onscroll = () => {
         crossButton.style.color  = 'var(--orange';
     }
 
-    if (scrollPosition >= homeHeight && scrollPosition < aboutHeight) {
+    if (scrollPosition > homeHeight && scrollPosition < aboutHeight) {
         linkSections.forEach(element => element.classList.remove('active'));
-        aboutLink.classList.add('active');
+        mobileAboutLink.classList.add('active');
+        desktopAboutLink.classList.add('active');
     }
 
-    if (scrollPosition >= aboutHeight && scrollPosition < skillsHeight) {
+    if (scrollPosition > aboutHeight && scrollPosition < skillsHeight) {
         linkSections.forEach(element => element.classList.remove('active'));
-        skillsLink.classList.add('active');
+        mobileSkillsLink.classList.add('active');
+        desktopSkillsLink.classList.add('active');
     }
 
-    if (scrollPosition >= skillsHeight && scrollPosition < resumeHeight) {
+    if (scrollPosition > skillsHeight && scrollPosition < resumeHeight) {
         linkSections.forEach(element => element.classList.remove('active'));
-        resumeLink.classList.add('active');
+        mobileResumeLink.classList.add('active');
+        desktopResumeLink.classList.add('active');
     }
 
-    if (scrollPosition >= resumeHeight - 50 && scrollPosition < projectsHeight) {
+    if (scrollPosition > resumeHeight - 50 && scrollPosition < projectsHeight) {
         linkSections.forEach(element => element.classList.remove('active'));
-        projectsLink.classList.add('active');
+        mobileProjectsLink.classList.add('active');
+        desktopProjectsLink.classList.add('active');
     }
 }
