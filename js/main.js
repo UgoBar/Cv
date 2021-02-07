@@ -73,11 +73,11 @@ const resume   = document.querySelector('#resume');
 const projects = document.querySelector('#projects');
 
 /** TAILLE DES SECTIONS */
-const homeHeight     = home.clientHeight;
+const homeHeight     = home.clientHeight -100;
 const aboutHeight    = home.clientHeight  + about.clientHeight;
-const skillsHeight   = about.clientHeight + home.clientHeight + skills.clientHeight;
-const resumeHeight   = about.clientHeight + home.clientHeight + skills.clientHeight + resume.clientHeight;
-const projectsHeight = about.clientHeight + home.clientHeight + skills.clientHeight + resume.clientHeight + projects.clientHeight;
+const skillsHeight   = about.clientHeight + home.clientHeight + skills.clientHeight -100;
+const resumeHeight   = about.clientHeight + home.clientHeight + skills.clientHeight + resume.clientHeight -100;
+const projectsHeight = about.clientHeight + home.clientHeight + skills.clientHeight + resume.clientHeight + projects.clientHeight -100;
 
 /** Fonction qui track à quelle hauteur de la page l'utilisateur se trouve
  *  Selon où il est un des liens prends la classe active
