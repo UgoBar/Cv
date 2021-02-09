@@ -52,73 +52,28 @@ li i {
 ███████║██║  ██╗██║███████╗███████╗███████║
 ╚══════╝╚═╝  ╚═╝╚═╝╚══════╝╚══════╝╚══════╝
 */
-.skills .progress {
-    height: 50px;
+
+.skills .container {
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.section-title {
+    width:100%;
+}
+
+.skills figure {
+    width:40%;
+    margin: 1rem;
+}
+
+.skills figure img{
     display: block;
-    background: none;
+    margin: 0 auto;
+    width: 60%;
 }
 
-.progress {
-    display: flex;
-    height: 1rem;
-    overflow: hidden;
-    font-size: .75rem;
-    background-color: #e9ecef;
-}
-
-.skill {
-	padding: 10px 0;
-	margin: 0 0 6px 0;
-    text-transform: uppercase;
-    font-size:1.4rem;
-	font-weight: 600;
-	font-family: var(--main);
-	color: #45505b;
-}
-
-.skill i {
-    font-style: normal;
-    font-size: 1.6rem;
-    padding-bottom:10px;
-}
-
-.skills .progress-bar {
-	height: 10px;
-	transition: .9s;
-    background-color: var(--green);
-    border-radius:.5rem;
-    padding-top: 1rem;
-}
-
-.skills .progress-bar-wrap {
-    background: #f2f3f5;
-    border-radius:.5rem;
-    margin-top: 1rem;
-}
-
-.html-bar {
-    width: 75%;
-}
-
-.css-bar {
-    width:60%;
-}
-
-.js-bar {
-    width:45%;
-}
-
-.php-bar {
-    width:50%;
-}
-
-.cms-bar {
-    width:75%;
-}
-
-.ps-bar {
-    width:65%
-}
 /* 
 ██████╗ ███████╗███████╗██╗   ██╗███╗   ███╗███████╗
 ██╔══██╗██╔════╝██╔════╝██║   ██║████╗ ████║██╔════╝
@@ -215,6 +170,32 @@ li i {
 /* ***********************************
 ************* RESPONSIVE *************
 ************************************ */
+@media (min-width:400px)
+{
+    .skills figure {
+        width:30%;
+        margin: 2rem;
+    }
+}
+
+@media (min-width:500px)
+{
+    .skills figure {
+        width: 22%;
+        margin: 2rem;
+    }
+}
+
+@media (min-width:722px)
+{
+    .skills .container {
+        justify-content: space-around;
+    }
+    .skills figure {
+        width: 22%;
+        margin: 2rem;
+    }
+}
 
 @media (min-width: 768px)
 {
@@ -251,24 +232,10 @@ li i {
 
 @media (min-width: 992px)
 {
-    #skills .container,
     #resume .container {
         display:flex;
         flex-flow: row wrap;
         justify-content: space-between;
-    }
-
-    #skills .section-title
-    #resume .section-title {
-        width:100%;
-    }
-
-    .skills-col, .resume-col {
-        width:48%;
-    }
-
-    .skills-col:first-of-type {
-        padding-right: 2rem;
     }
 }
 
@@ -299,5 +266,13 @@ li i {
 
     #about .container ul:last-of-type {
         width:30%;
+    }
+
+    .skills figure {
+        width: 17%;
+    }
+
+    .skills figure img{
+        width: 40%;
     }
 }
