@@ -9,7 +9,7 @@
 #home {
     width:100%;
     height:100vh;
-    background: url('../img/ugo-barathe-banner.jpg') top right no-repeat;
+    background: url('../img/ugo-barathe-banner_m.jpg') center no-repeat;
     background-size: cover;
 }
 
@@ -119,6 +119,10 @@ li i {
 
 .resume-item h4 {
     line-height: 18px;
+}
+
+.resume-item p {
+    text-align: justify;
 }
 /* 
 ██████╗ ██████╗  ██████╗      ██╗███████╗ ██████╗████████╗
@@ -254,8 +258,13 @@ li i {
 @media (min-width: 1052px)
 {
     #home {
+        background: url('../img/ugo-barathe-banner.jpg') top right no-repeat;
         background-attachment: fixed;
         background-size: cover;
+    }
+
+    #home .container {
+        justify-content: center;
     }
 
     #home h1 {

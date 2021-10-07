@@ -37,7 +37,7 @@ const mobileAboutLink    = document.querySelector('#aboutLink');
 const mobileSkillsLink   = document.querySelector('#skillsLink');
 const mobileResumeLink   = document.querySelector('#resumeLink');
 const mobileProjectsLink = document.querySelector('#projectsLink');
- /** LIENS NAVBAR MOBILE */
+ /** LIENS NAVBAR DESKTOP */
  const desktopHomeLink     = document.querySelector('.homeLink');
  const desktopAboutLink    = document.querySelector('.aboutLink');
  const desktopSkillsLink   = document.querySelector('.skillsLink');
@@ -97,8 +97,8 @@ window.onscroll = () => {
     }
     else {
         /** Sinon le burger et la croix sont oranges */
-        burgerButton.style.color = 'var(--orange';
-        crossButton.style.color  = 'var(--orange';
+        burgerButton.style.color = 'var(--orange)';
+        crossButton.style.color  = 'var(--orange)';
     }
 
     if (scrollPosition > homeHeight && scrollPosition < aboutHeight) {
