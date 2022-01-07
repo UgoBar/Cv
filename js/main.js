@@ -31,20 +31,20 @@ function hideNavbar() {
  * -------------------- SCROLL SPY -------------------------
  ***********************************************************/
 
- /** LIENS NAVBAR MOBILE */
+/** LIENS NAVBAR MOBILE */
 const mobileHomeLink     = document.querySelector('#homeLink');
 const mobileAboutLink    = document.querySelector('#aboutLink');
 const mobileSkillsLink   = document.querySelector('#skillsLink');
 const mobileResumeLink   = document.querySelector('#resumeLink');
 const mobileProjectsLink = document.querySelector('#projectsLink');
- /** LIENS NAVBAR DESKTOP */
- const desktopHomeLink     = document.querySelector('.homeLink');
- const desktopAboutLink    = document.querySelector('.aboutLink');
- const desktopSkillsLink   = document.querySelector('.skillsLink');
- const desktopResumeLink   = document.querySelector('.resumeLink');
- const desktopProjectsLink = document.querySelector('.projectsLink');
+/** LIENS NAVBAR DESKTOP */
+const desktopHomeLink     = document.querySelector('.homeLink');
+const desktopAboutLink    = document.querySelector('.aboutLink');
+const desktopSkillsLink   = document.querySelector('.skillsLink');
+const desktopResumeLink   = document.querySelector('.resumeLink');
+const desktopProjectsLink = document.querySelector('.projectsLink');
 
- /** Je range les liens dans un tableau */
+/** Je range les liens dans un tableau */
 const linkSections = [
     /** Liens mobile */
     mobileHomeLink,
@@ -57,7 +57,7 @@ const linkSections = [
     desktopHomeLink,
     desktopAboutLink,
     desktopSkillsLink,
-    desktopResumeLink, 
+    desktopResumeLink,
     desktopProjectsLink
 ];
 
@@ -83,7 +83,7 @@ const projectsHeight = about.clientHeight + home.clientHeight + skills.clientHei
  *  Selon où il est un des liens prends la classe active
  *  Les autres liens perdent la classe active */
 window.onscroll = () => {
-    
+
     let scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
 
     if (scrollPosition < homeHeight) {
