@@ -1,420 +1,1884 @@
 <!DOCTYPE html>
 <html lang="fr">
+<head>
+    <!-- BASE -->
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <head>
-        <meta charset="utf-8">
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Ugo Barathe — Développeur web & musicien · Marseille</title>
+    <meta name="description"
+          content="CV personnel de Ugo Barathe, développeur web (Symfony, Nuxt) et musicien basé à Marseille / Aix-en-Provence. Projets, scènes live et compositions."/>
+    <meta name="author" content="Ugo Barathe"/>
 
-        <title>Ugo Barathe | CV</title>
-        <meta content="Site de présentation. CV de Ugo Barathe, développeur Web à Aix-en-Provence / Marseille" name="description">
-        <meta content="Ugo Barathe, développeur full stack Aix en provence" name="keywords">
+    <!-- Indexation -->
+    <meta name="robots" content="index, follow"/>
+    <link rel="canonical" href="https://ugo-barathe.com/"/>
 
-        <!-- Facebook Meta Tags -->
-        <meta property="og:url" content="https://ugo-barathe.com">
-        <meta property="og:type" content="website">
-        <meta property="og:title" content="Ugo Barathe CV">
-        <meta property="og:description" content="Site de présentation. CV de Ugo Barathe, développeur Web à Aix-en-Provence / Marseille">
-        <meta property="og:image" content="http://www.ugo-barathe.com/img/ugo-barathe-share-card.jpg">
+    <!-- OpenGraph (Facebook, LinkedIn, Discord, Slack...) -->
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://ugo-barathe.com/"/>
+    <meta property="og:site_name" content="Ugo Barathe"/>
+    <meta property="og:title" content="Ugo Barathe — Développeur web & musicien"/>
+    <meta property="og:description"
+          content="CV personnel : développeur web (Symfony, Nuxt) et musicien basé à Marseille / Aix-en-Provence."/>
+    <meta property="og:image" content="https://ugo-barathe.com/images/og-card.jpg"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+    <meta property="og:image:alt" content="Ugo Barathe — développeur & musicien"/>
+    <meta property="og:locale" content="fr_FR"/>
 
-        <!-- Twitter Meta Tags -->
-        <meta name="twitter:card" content="summary_large_image">
-        <meta property="twitter:domain" content="ugo-barathe.com">
-        <meta property="twitter:url" content="https://ugo-barathe.com">
-        <meta name="twitter:title" content="Ugo Barathe CV">
-        <meta name="twitter:description" content="Site de présentation. CV de Ugo Barathe, développeur Web à Aix-en-Provence / Marseille">
-        <meta name="twitter:image" content="http://www.ugo-barathe.com/img/ugo-barathe-share-card.jpg">
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:url" content="https://ugo-barathe.com/"/>
+    <meta name="twitter:title" content="Ugo Barathe — Développeur web & musicien"/>
+    <meta name="twitter:description"
+          content="CV personnel : développeur web (Symfony, Nuxt) et musicien basé à Marseille / Aix-en-Provence."/>
+    <meta name="twitter:image" content="https://ugo-barathe.com/images/og-card.jpg"/>
 
-        <!-- Favicons -->
-        <link href="assets/img/favicon.png" rel="icon">
+    <!-- Theme color (barre d'adresse mobile) -->
+    <meta name="theme-color" content="#0a0810" media="(prefers-color-scheme: dark)"/>
+    <meta name="theme-color" content="#f5f3ee" media="(prefers-color-scheme: light)"/>
 
-        <!-- FONT AWESOME -->
-        <script src="https://kit.fontawesome.com/73ab01ebea.js" crossorigin="anonymous"></script>
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico"/>
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg"/>
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png"/>
+    <link rel="manifest" href="/images/site.webmanifest"/>
 
-        <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Merriweather&family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400;12..96,75..100,500;12..96,75..100,700;12..96,75..100,800&family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap"
+          rel="stylesheet"/>
 
-        <!-- CSS Files -->
-        <link href="css/normalize.css" rel="stylesheet">
-        <link href="css/common.css" rel="stylesheet">
-        <link href="css/icons.css" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 
-    </head>
+    <style>
+        /* ------------------------------------------------------------------
+           THEME TOKENS — deux univers via custom properties
+        ------------------------------------------------------------------ */
+        :root {
+            --serif: "Fraunces", "Times New Roman", serif;
+            --sans: "Inter", system-ui, sans-serif;
+            --mono: "JetBrains Mono", ui-monospace, monospace;
+            --brutalist: "Bricolage Grotesque", "Inter", sans-serif;
+            --ease: cubic-bezier(.77, 0, .175, 1);
+        }
 
-    <body>
+        /* Mode musique : nocturne, doré, BRUTALISTE */
+        body.mode-music {
+            --bg: #0a0810;
+            --bg-soft: #14101e;
+            --fg: #f4ebd7;
+            --fg-muted: #a89c84;
+            --accent: #facf34;
+            --accent-soft: rgba(250, 207, 52, 0.15);
+            --border: rgba(244, 235, 215, 0.08);
+            --display-font: var(--brutalist);
+            --body-font: var(--brutalist);
+            --grid-color: rgba(250, 207, 52, 0.04);
+        }
 
-        <header>
-            <!-- ======= Mobile nav toggle button ======= -->
-            <button id="burger" title="menu"><i class="icon-burger"></i></button>
-            <button id="cross" class="hidden" title="fermer le menu"><i class="icon-cross"></i></button>
+        /* Mode dev : diurne, bleu électrique */
+        body.mode-dev {
+            --bg: #f5f3ee;
+            --bg-soft: #ebe8e0;
+            --fg: #0a0a0f;
+            --fg-muted: #4a4a55;
+            --accent: #15803d;
+            --accent-soft: rgba(21, 128, 61, 0.1);
+            --border: rgba(10, 10, 15, 0.1);
+            --display-font: var(--sans);
+            --body-font: var(--mono);
+            --grid-color: rgba(10, 10, 15, 0.04);
+        }
 
-            <!-- ======= Navbar mobile ======= -->
-            <div id="navbar-mobile" class="navbar-mobile">
-                <nav class="nav-menu flex column justify-center">
-                    <a id="homeLink" href="#home" title="Retour à l'accueil"><i class="icon-house"></i> <span>Home</span></a>
-                    <a id="aboutLink" href="#about" title="Aller à la page à propos"><i class="icon-avatar"></i> <span>A propos</span></a>
-                    <a id="skillsLink" href="#skills" title="Aller à la page compétences"><i class="icon-strength"></i> <span>Compétences</span></a>
-                    <a id="resumeLink" href="#resume" title="Aller à la page CV"><i class="icon-lab"></i> <span>Experiences</span></a>
-                    <a id="projectsLink" href="#projects" title="Aller à la page projets"><i class="icon-computer"></i> <span>Projets</span></a>
-                </nav>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--body-font);
+            background: var(--bg);
+            color: var(--fg);
+            overflow-x: hidden;
+            transition: background 0.6s var(--ease), color 0.6s var(--ease);
+            min-height: 100vh;
+            line-height: 1.6;
+            cursor: default;
+        }
+
+        /* Grille technique en background (visible surtout en mode dev) */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image: linear-gradient(var(--grid-color) 1px, transparent 1px),
+            linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 48px 48px;
+            pointer-events: none;
+            z-index: 0;
+            transition: background-image 0.6s var(--ease);
+        }
+
+        /* Canvas particules (notes en mode musique, points en mode dev) */
+        #particles {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* ------------------------------------------------------------------
+           LAYOUT
+        ------------------------------------------------------------------ */
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* HEADER ---------------------------------------------------------- */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 32px 0;
+            position: relative;
+        }
+
+        .logo {
+            font-family: var(--display-font);
+            font-size: 22px;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            transition: font-family 0.6s var(--ease);
+        }
+
+        .logo .dot {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: var(--accent);
+            border-radius: 50%;
+            margin-left: 4px;
+            vertical-align: middle;
+            transition: background 0.6s var(--ease);
+        }
+
+        /* TOGGLE — sticky, toujours présent --------------------------- */
+        .toggle {
+            position: fixed;
+            top: 28px;
+            right: 32px;
+            z-index: 500;
+            width: 88px;
+            height: 44px;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            background: var(--bg-soft);
+            cursor: pointer;
+            padding: 4px;
+            transition: background 0.6s var(--ease), border-color 0.6s var(--ease), opacity 0.4s, transform 0.4s;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .toggle.is-hidden {
+            opacity: 0;
+            transform: translateY(-12px);
+            pointer-events: none;
+        }
+
+        .toggle:hover {
+            border-color: var(--accent);
+        }
+
+        .toggle-thumb {
+            position: absolute;
+            top: 4px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--bg);
+            font-family: var(--mono);
+            font-size: 14px;
+            font-weight: 700;
+            transition: background 0.6s var(--ease), color 0.6s var(--ease);
+            will-change: transform;
+        }
+
+        body.mode-music .toggle-thumb {
+            left: 4px;
+        }
+
+        body.mode-dev .toggle-thumb {
+            left: calc(100% - 40px);
+        }
+
+        .toggle-labels {
+            display: flex;
+            justify-content: space-between;
+            height: 100%;
+            align-items: center;
+            padding: 0 12px;
+            font-size: 11px;
+            font-family: var(--mono);
+            color: var(--fg-muted);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .toggle-labels span {
+            transition: opacity 0.4s;
+        }
+
+        body.mode-music .toggle-labels span:first-child {
+            opacity: 0;
+        }
+
+        body.mode-dev .toggle-labels span:last-child {
+            opacity: 0;
+        }
+
+        /* HERO ------------------------------------------------------------ */
+        .hero {
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px 0 60px;
+        }
+
+        .hero-tag {
+            font-family: var(--mono);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--fg-muted);
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .hero-tag::before {
+            content: "";
+            width: 32px;
+            height: 1px;
+            background: var(--accent);
+            transition: background 0.6s var(--ease);
+        }
+
+        .hero h1 {
+            font-family: var(--display-font);
+            font-size: clamp(48px, 9vw, 140px);
+            line-height: 0.95;
+            letter-spacing: -0.04em;
+            font-weight: 400;
+            margin-bottom: 24px;
+            transition: font-family 0.6s var(--ease);
+        }
+
+        body.mode-music .hero h1 {
+            font-weight: 800;
+            letter-spacing: -0.06em;
+            font-stretch: 100%;
+        }
+
+        body.mode-dev .hero h1 {
+            font-style: normal;
+            font-weight: 500;
+            letter-spacing: -0.05em;
+        }
+
+        .hero h1 .accent {
+            color: var(--accent);
+            transition: color 0.6s var(--ease);
+        }
+
+        .hero-role {
+            font-family: var(--display-font);
+            font-size: clamp(20px, 2.5vw, 28px);
+            color: var(--fg-muted);
+            margin-bottom: 32px;
+            min-height: 1.4em;
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: 32px;
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--fg-muted);
+            flex-wrap: wrap;
+        }
+
+        .hero-meta div::before {
+            content: "→ ";
+            color: var(--accent);
+        }
+
+        /* SECTION GÉNÉRIQUE ---------------------------------------------- */
+        .section {
+            padding: 120px 0;
+            position: relative;
+        }
+
+        .section-label {
+            font-family: var(--mono);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--accent);
+            margin-bottom: 16px;
+            transition: color 0.6s var(--ease);
+        }
+
+        .section-title {
+            font-family: var(--display-font);
+            font-size: clamp(36px, 5vw, 64px);
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            margin-bottom: 48px;
+            font-weight: 400;
+            transition: font-family 0.6s var(--ease);
+        }
+
+        body.mode-music .section-title {
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            font-stretch: 90%;
+        }
+
+        /* ABOUT ----------------------------------------------------------- */
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .about-image {
+            aspect-ratio: 3/4;
+            background: var(--bg-soft);
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            position: relative;
+            overflow: hidden;
+            /* Ombre diffuse colorée, plus marquée que les projets car c'est une image principale */
+            box-shadow: 12px 16px 40px -10px var(--accent-soft),
+            0 10px 32px rgba(0, 0, 0, 0.2);
+            transition: background 0.6s var(--ease),
+            border-color 0.6s var(--ease),
+            box-shadow 0.6s var(--ease);
+        }
+
+        .about-image img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .about-image-label {
+            position: absolute;
+            bottom: 16px;
+            left: 16px;
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--fg-muted);
+            z-index: 2;
+        }
+
+        .about-text p {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            color: var(--fg);
+        }
+
+        body.mode-music .about-text p {
+            font-family: var(--brutalist);
+            font-size: 19px;
+            line-height: 1.55;
+            font-weight: 400;
+        }
+
+        body.mode-music .about-text p:first-child {
+            font-size: 19px;
+            font-weight: 500;
+            line-height: 1.35;
+            letter-spacing: -0.015em;
+        }
+
+        body.mode-dev .about-text p {
+            font-family: var(--sans);
+            font-size: 17px;
+        }
+
+        /* PROJETS --------------------------------------------------------- */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+
+        /* Si nombre impair de projets, la dernière card prend toute la largeur
+           pour éviter le trou disgracieux en bas à droite */
+        .projects .project:last-child:nth-child(odd) {
+            grid-column: 1 / -1;
+        }
+
+        .project {
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 32px;
+            background: var(--bg-soft);
+            transition: background 0.6s var(--ease), border-color 0.3s, transform 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        .project-image {
+            aspect-ratio: 16/9;
+            background: var(--bg);
+            border-radius: 3px;
+            margin-bottom: 24px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border);
+            /* Ombre vraiment douce : diffuse, colorée subtilement, jamais "bordure offset" */
+            box-shadow: 8px 12px 28px -8px var(--accent-soft),
+            0 6px 18px rgba(0, 0, 0, 0.16);
+            transition: box-shadow 0.5s cubic-bezier(.22, 1, .36, 1);
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Au hover : l'ombre se renforce légèrement (offset + blur), même couleur subtile.
+           Pas de transform sur l'image elle-même — c'est la card parent qui se soulève. */
+        .project:hover .project-image {
+            box-shadow: 12px 18px 36px -10px var(--accent-soft),
+            0 12px 28px rgba(0, 0, 0, 0.22);
+        }
+
+        .project-image-placeholder {
+            font-family: var(--mono);
+            font-size: 11px;
+            color: var(--fg-muted);
+            letter-spacing: 0.1em;
+        }
+
+        .project-tag {
+            display: inline-block;
+            font-family: var(--mono);
+            font-size: 10px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 12px;
+            transition: color 0.6s var(--ease);
+        }
+
+        .project h3 {
+            font-family: var(--display-font);
+            font-size: 28px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+            transition: font-family 0.6s var(--ease);
+        }
+
+        body.mode-music .project h3 {
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            font-stretch: 95%;
+        }
+
+        .project p {
+            color: var(--fg-muted);
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 16px;
+            font-family: var(--mono);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .project-links a, .project-links span {
+            color: var(--fg);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent);
+            padding-bottom: 2px;
+            transition: color 0.3s;
+        }
+
+        .project-links a:hover {
+            color: var(--accent);
+        }
+
+        .project-links span {
+            color: var(--fg-muted);
+            border-color: var(--fg-muted);
+            cursor: not-allowed;
+        }
+
+        /* Bloc audio/video pour les projets musique */
+        .project-media {
+            margin-top: 16px;
+            padding: 12px;
+            background: var(--bg);
+            border-radius: 2px;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: var(--mono);
+            font-size: 12px;
+            color: var(--fg-muted);
+        }
+
+        .project-media-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: var(--bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* FOOTER ---------------------------------------------------------- */
+        footer {
+            padding: 80px 0 48px;
+            border-top: 1px solid var(--border);
+            margin-top: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            flex-wrap: wrap;
+            gap: 32px;
+        }
+
+        footer p {
+            font-family: var(--mono);
+            font-size: 12px;
+            color: var(--fg-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .contact-btn {
+            background: none;
+            border: none;
+            padding: 0 0 4px 0;
+            cursor: pointer;
+            color: var(--fg);
+            font-family: var(--display-font);
+            font-size: 32px;
+            letter-spacing: -0.02em;
+            border-bottom: 1px solid var(--accent);
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            transition: color 0.3s, font-family 0.6s var(--ease);
+        }
+
+        body.mode-music .contact-btn {
+            font-weight: 700;
+            letter-spacing: -0.03em;
+        }
+
+        .contact-btn:hover {
+            color: var(--accent);
+        }
+
+        .contact-btn-arrow {
+            display: inline-block;
+            transition: transform 0.3s ease;
+            font-size: 24px;
+        }
+
+        .contact-btn:hover .contact-btn-arrow {
+            transform: translateX(6px);
+        }
+
+        .contact-btn.is-revealed .contact-btn-arrow {
+            display: none;
+        }
+
+        .contact-btn.is-revealed {
+            cursor: text;
+        }
+
+        /* ------------------------------------------------------------------
+           TRANSITION OVERLAY — le cercle qui révèle l'autre univers
+        ------------------------------------------------------------------ */
+        .reveal {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            pointer-events: none;
+            clip-path: circle(0% at 50% 50%);
+        }
+
+        /* Deux couches : la couleur cible + un décor */
+        .reveal-bg {
+            position: absolute;
+            inset: 0;
+            background: var(--reveal-bg-color, #0a0810);
+        }
+
+        .reveal-mark {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--serif);
+            font-size: 200px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--reveal-fg-color, #facf34);
+            opacity: 0;
+            letter-spacing: -0.05em;
+        }
+
+        /* ------------------------------------------------------------------
+           SPLASH SCREEN — page d'accueil avec choix d'univers
+        ------------------------------------------------------------------ */
+        .splash {
+            position: fixed;
+            inset: 0;
+            z-index: 8000;
+            display: flex;
+            background: #0a0810;
+            overflow: hidden;
+        }
+
+        .splash-half {
+            flex: 1;
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 48px 56px;
+            overflow: hidden;
+            transition: flex 0.7s cubic-bezier(.77, 0, .175, 1);
+            will-change: flex;
+        }
+
+        .splash-half--music {
+            background: #0a0810;
+            color: #f4ebd7;
+        }
+
+        .splash-half--dev {
+            background: #f5f3ee;
+            color: #0a0a0f;
+        }
+
+        /* Au hover : l'autre se rétrécit, le choisi s'agrandit */
+        .splash:not(.is-leaving):hover .splash-half--music:not(:hover) {
+            flex: 0.85;
+        }
+
+        .splash:not(.is-leaving):hover .splash-half--dev:not(:hover) {
+            flex: 0.85;
+        }
+
+        .splash:not(.is-leaving) .splash-half:hover {
+            flex: 1.15;
+        }
+
+        /* Texture de fond subtile par moitié */
+        .splash-half--music::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 30% 20%, rgba(250, 207, 52, 0.08), transparent 50%),
+            radial-gradient(circle at 70% 80%, rgba(250, 207, 52, 0.05), transparent 50%);
+            pointer-events: none;
+        }
+
+        .splash-half--dev::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(10, 10, 15, 0.04) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(10, 10, 15, 0.04) 1px, transparent 1px);
+            background-size: 32px 32px;
+            pointer-events: none;
+        }
+
+        .splash-tag {
+            font-family: "JetBrains Mono", monospace;
+            font-size: 11px;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            opacity: 0.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        .splash-half--music .splash-tag {
+            color: #facf34;
+        }
+
+        .splash-half--dev .splash-tag {
+            color: #15803d;
+        }
+
+        .splash-label {
+            font-family: "Bricolage Grotesque", sans-serif;
+            font-weight: 800;
+            font-size: clamp(64px, 12vw, 180px);
+            line-height: 0.85;
+            letter-spacing: -0.06em;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 2;
+            font-stretch: 85%;
+        }
+
+        .splash-half--dev .splash-label {
+            font-family: "Inter", sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.05em;
+            font-stretch: 100%;
+        }
+
+        .splash-sub {
+            font-size: 15px;
+            line-height: 1.5;
+            max-width: 320px;
+            opacity: 0.7;
+            position: relative;
+            z-index: 2;
+        }
+
+        .splash-half--music .splash-sub {
+            font-family: "Bricolage Grotesque", sans-serif;
+            font-weight: 400;
+        }
+
+        .splash-half--dev .splash-sub {
+            font-family: "JetBrains Mono", monospace;
+            font-size: 13px;
+        }
+
+        .splash-cta {
+            font-family: "JetBrains Mono", monospace;
+            font-size: 12px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-top: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            opacity: 0;
+            transform: translateX(-12px);
+            transition: opacity 0.3s, transform 0.3s;
+            position: relative;
+            z-index: 2;
+        }
+
+        .splash-half:hover .splash-cta {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .splash-cta-arrow {
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+
+        .splash-half:hover .splash-cta-arrow {
+            transform: translateX(6px);
+        }
+
+        /* Photo centrale — chevauche les deux moitiés */
+        /* Registre la variable pour pouvoir l'animer (smooth transitions sur mask) */
+        /* Variables animables : position souris (X, Y) en %, tilt 3D en degrés */
+        @property --mx {
+            syntax: "<percentage>";
+            inherits: true;
+            initial-value: 50%;
+        }
+
+        @property --my {
+            syntax: "<percentage>";
+            inherits: true;
+            initial-value: 50%;
+        }
+
+        @property --tx {
+            syntax: "<angle>";
+            inherits: true;
+            initial-value: 0deg;
+        }
+
+        @property --ty {
+            syntax: "<angle>";
+            inherits: true;
+            initial-value: 0deg;
+        }
+
+        .splash-photo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 380px;
+            max-width: 38vw;
+            aspect-ratio: 3/4;
+            z-index: 3;
+            pointer-events: none;
+            perspective: 1400px;
+            --mx: 50%;
+            --my: 50%;
+            --tx: 0deg;
+            --ty: 0deg;
+            transition: --mx 0.55s cubic-bezier(.22, 1, .36, 1),
+            --my 0.55s cubic-bezier(.22, 1, .36, 1),
+            --tx 0.55s cubic-bezier(.22, 1, .36, 1),
+            --ty 0.55s cubic-bezier(.22, 1, .36, 1);
+        }
+
+        /* Wrapper interne pour porter le tilt 3D sans casser le centrage du parent */
+        .splash-photo-tilt {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 4px;
+            overflow: hidden;
+            transform: rotateY(var(--ty)) rotateX(var(--tx));
+            transition: transform 0.55s cubic-bezier(.22, 1, .36, 1);
+            transform-style: preserve-3d;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.55),
+            0 0 0 1px rgba(255, 255, 255, 0.05);
+        }
+
+        .splash-photo-tilt img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Photo assombrie/désaturée par défaut — le spotlight va la "révéler" */
+            filter: contrast(1.08) brightness(0.82) saturate(0.3) sepia(0.3);
+        }
+
+        /* Couche 1 : voile sombre avec révélation radiale autour du curseur.
+           5 stops non linéaires → courbe diffuse, pas un cercle net. */
+        .splash-photo-spotlight {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 2;
+            background: radial-gradient(
+                    circle 240px at var(--mx) var(--my),
+                    rgba(8, 6, 14, 0) 0%,
+                    rgba(8, 6, 14, 0.06) 35%,
+                    rgba(8, 6, 14, 0.10) 60%,
+                    rgba(8, 6, 14, 0.20) 78%,
+                    rgba(8, 6, 14, 0.30) 100%
+            );
+        }
+
+        /* Couche 2 : halo lumineux chaud sous le curseur, en soft-light pour rester subtil.
+           C'est le "spot scène" : ça éclaire sans dénaturer la photo. */
+        .splash-photo-glow {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 3;
+            background: radial-gradient(
+                    circle 200px at var(--mx) var(--my),
+                    rgba(255, 235, 195, 0.15) 0%,
+                    rgba(255, 235, 195, 0.05) 45%,
+                    transparent 75%
+            );
+            mix-blend-mode: soft-light;
+        }
+
+        .splash-photo-placeholder {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #2a2335 0%, #4a3a52 50%, #6b5a73 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "JetBrains Mono", monospace;
+            font-size: 11px;
+            color: rgba(244, 235, 215, 0.4);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 24px;
+        }
+
+        /* Branding en haut */
+        /* Variable qui contrôle où tombe le cut du gradient dans la largeur du mot.
+           50% = mot moitié cream / moitié dark (état au repos).
+           110% = cut sorti à droite du mot → tout cream (visible sur fond noir musique).
+           -10% = cut sorti à gauche du mot → tout dark (visible sur fond clair dev).
+           @property permet de l'animer en transition douce. */
+        @property --cut-pos {
+            syntax: "<percentage>";
+            inherits: true;
+            initial-value: 50%;
+        }
+
+        .splash-brand {
+            position: absolute;
+            top: 48px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+            font-family: "Bricolage Grotesque", sans-serif;
+            font-weight: 800;
+            font-size: 22px;
+            letter-spacing: -0.03em;
+            pointer-events: none;
+        }
+
+        .splash-brand-text {
+            --cut-pos: 50%;
+            background: linear-gradient(
+                    to right,
+                    #f4ebd7 0%,
+                    #f4ebd7 var(--cut-pos),
+                    #0a0a0f var(--cut-pos),
+                    #0a0a0f 100%
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            transition: --cut-pos 0.55s cubic-bezier(.77, 0, .175, 1);
+        }
+
+        /* Au hover musique, le mot bascule entièrement en cream (lisible sur fond noir
+           qui s'étend maintenant sous lui). Le cut sort à droite du mot. */
+        .splash:has(.splash-half--music:hover) .splash-brand-text {
+            --cut-pos: 110%;
+        }
+
+        /* Inverse au hover dev : le mot bascule entièrement en dark (lisible sur fond clair). */
+        .splash:has(.splash-half--dev:hover) .splash-brand-text {
+            --cut-pos: -10%;
+        }
+
+        .splash-brand-dot {
+            /* Positionné absolument à la droite du texte, sans agrandir la bbox du brand */
+            position: absolute;
+            left: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            margin-left: 6px;
+            width: 6px;
+            height: 6px;
+            background: #facf34;
+            border-radius: 50%;
+            transition: background 0.4s ease;
+        }
+
+        /* Au hover sur la moitié dev, le dot bascule en vert */
+        .splash:has(.splash-half--dev:hover) .splash-brand-dot {
+            background: #15803d;
+        }
+
+        /* Hint en bas : deux moitiés indépendantes, chacune côté son univers.
+           Elles suivent la frontière mouvante des splash-half via --hint-shift. */
+        @property --hint-shift {
+            syntax: "<percentage>";
+            inherits: true;
+            initial-value: 0%;
+        }
+
+        .splash {
+            --hint-shift: 0%;
+            transition: --hint-shift 0.7s cubic-bezier(.77, 0, .175, 1);
+        }
+
+        .splash-hint {
+            position: absolute;
+            bottom: 32px;
+            left: 0;
+            right: 0;
+            z-index: 5;
+            font-family: "JetBrains Mono", monospace;
+            font-size: 10px;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            pointer-events: none;
+            height: 1em;
+        }
+
+        .splash-hint-left,
+        .splash-hint-right {
+            position: absolute;
+            top: 0;
+            white-space: nowrap;
+            transition: color 0.4s ease;
+        }
+
+        /* "Deux salles" : ancré sur la frontière, aligné à droite (son bord droit
+           touche la frontière). Décalé de 16px à gauche pour laisser respirer. */
+        .splash-hint-left {
+            right: calc(50% - var(--hint-shift) + 40px);
+            color: rgba(244, 235, 215, 0.85);
+        }
+
+        /* "Deux ambiances" : ancré sur la frontière, aligné à gauche. */
+        .splash-hint-right {
+            left: calc(50% + var(--hint-shift) + 40px);
+            color: rgba(10, 10, 20, 0.65);
+        }
+
+        /* Quand musique est hover (sa moitié grandit à 1.15 sur un total de 2),
+           la frontière passe de 50% à 57.5% → les deux labels suivent vers la droite. */
+        .splash:has(.splash-half--music:hover) {
+            --hint-shift: 7.5%;
+        }
+
+        .splash:has(.splash-half--dev:hover) {
+            --hint-shift: -7.5%;
+        }
+
+        @media (max-width: 768px) {
+            .splash {
+                flex-direction: column;
+            }
+
+            .splash-half {
+                padding: 24px;
+                /* Le hover scale n'a plus de sens en colonne, on neutralise */
+            }
+
+            .splash-half:hover, .splash:hover .splash-half:not(:hover) {
+                flex: 1;
+            }
+
+            /* Musique en haut : on pousse le contenu vers le haut, loin du photo central */
+            .splash-half--music {
+                justify-content: flex-start;
+                padding-top: 90px; /* place pour le brand */
+            }
+
+            /* Dev en bas : contenu vers le bas, loin du photo central et du hint */
+            .splash-half--dev {
+                justify-content: flex-end;
+                padding-bottom: 64px;
+            }
+
+            /* Labels plus petits pour ne pas déborder */
+            .splash-label {
+                font-size: clamp(40px, 11vw, 72px);
+            }
+
+            .splash-sub {
+                font-size: 14px;
+            }
+
+            /* Photo plus petite pour ne pas écraser le texte */
+            .splash-photo {
+                width: 180px;
+                max-width: 50vw;
+            }
+
+            /* Brand : en mobile la frontière est horizontale, donc le gradient
+               vertical-cut ne s'applique pas. Le brand est en haut, dans la moitié
+               musique (fond noir), donc on bascule en cream solide. */
+            .splash-brand {
+                top: 24px;
+                font-size: 20px;
+            }
+
+            .splash-brand-text {
+                background: none;
+                -webkit-background-clip: unset;
+                background-clip: unset;
+                color: #f4ebd7;
+            }
+
+            /* En mobile, la frontière est horizontale (les halves sont empilés).
+               Le hint passe en stack vertical : "Deux salles" au-dessus du photo
+               dans la zone musique, "Deux ambiances" en-dessous dans la zone dev. */
+            .splash-hint {
+                bottom: auto;
+                top: 50%;
+                left: 0;
+                right: 0;
+                height: auto;
+                transform: none;
+                font-size: 9px;
+            }
+
+            .splash-hint-left,
+            .splash-hint-right {
+                position: absolute;
+                left: 50% !important;
+                right: auto !important;
+                transform: translateX(-50%);
+            }
+
+            .splash-hint-left {
+                top: -148px;
+                color: rgba(244, 235, 215, 0.7);
+            }
+
+            .splash-hint-right {
+                top: 132px;
+                color: rgba(10, 10, 20, 0.7);
+            }
+        }
+
+        /* ------------------------------------------------------------------
+           RESPONSIVE
+        ------------------------------------------------------------------ */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 24px;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: 60vh;
+                padding: 60px 0 40px;
+            }
+
+            .section {
+                padding: 80px 0;
+            }
+
+            footer {
+                flex-direction: column;
+                align-items: start;
+            }
+        }
+
+        /* ------------------------------------------------------------------
+           ACCESSIBILITÉ — respect prefers-reduced-motion
+        ------------------------------------------------------------------ */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body class="mode-music">
+
+<!-- SPLASH SCREEN — choix initial d'univers -->
+<div class="splash" id="splash">
+    <div class="splash-brand"><span class="splash-brand-text">Ugo Barathe</span><span class="splash-brand-dot"></span></div>
+
+    <div class="splash-half splash-half--music" data-target="music">
+        <div></div>
+        <div>
+            <div class="splash-label">MUSIQUE</div>
+            <div class="splash-sub">Sessions studio, scènes live avec Toto et les Sauvages et Odzie and The Newtones,
+                musique à l'image.
             </div>
-
-            <!-- ======= Navbar desktop ======= -->
-            <div id="navbar-desktop" class="flex">
-                <nav class="nav-menu flex column justify-center">
-                    <a class="homeLink" href="#home" title="Retour à l'accueil"><i class="icon-house"></i></a>
-                    <a class="aboutLink" href="#about" title="Aller à la page à propos"><i class="icon-avatar"></i></a>
-                    <a class="skillsLink" href="#skills" title="Aller à la page compétences"><i class="icon-strength"></i></a>
-                    <a class="resumeLink" href="#resume" title="Aller à la page CV"><i class="icon-lab"></i></a>
-                    <a class="projectsLink" href="#projects" title="Aller à la page projets"><i class="icon-computer"></i></a>
-                </nav>
+            <div class="splash-cta">
+                <span>Des claviers ?</span>
+                <span class="splash-cta-arrow">→</span>
             </div>
-        </header>
+        </div>
+    </div>
 
-        <main>
-            <!-- ======= Home ======= -->
-            <section id="home" class="flex">
-                <div class="container flex column">
-                    <h1 class="capital">Ugo Barathe</h1>
-                    <p>Développeur full stack</p>
-                </div>
-            </section>
-
-            <!-- ======= About ======= -->
-            <section id="about">
-                <div class="container">
-                    <div class="section-title">
-                        <h2>À propos</h2>
-                        <p>Je suis Ugo, un ancien musicien/graphiste devenu développeur Full Stack et passionné par les défis techniques et les projets innovants. Après avoir passé plusieurs années dans l’univers de la musique (compositeur et arrangeur, ça forge la créativité), j’ai décidé de me lancer dans le développement web, un domaine qui me fascine par son côté à la fois technique et créatif.</p>
-                        <p>Aujourd’hui, je suis à la recherche d’une équipe dynamique où je pourrais continuer à apprendre, contribuer et évoluer.</p>
-
-                        <a class="button" href="https://www.ugo-barathe.com/img/CV_UGO_BARATHE.pdf" target="_blank" rel="noreferrer" title="Lien vers mon CV">Voir mon CV</a>
-                        <a class="button" href="https://github.com/UgoBar" target="_blank" rel="noreferrer" title="Lien vers mon github">Voir mon git</a>
-                    </div>
-
-                    <h3>Graphiste &amp; Développeur Web.</h3>
-                    <p><em>
-                    Aujourd'hui basé à Marseille, je suis à la recherche d'une équipe pour approfondir mes connaissances en web et participer à des projets challengeant !.
-                    </em></p>
-                    <ul>
-                        <li><i class="fas fa-angle-right"></i> <strong>Ville:</strong> Marseille</li>
-                    </ul>
-                    <ul>
-                        <li><i class="fas fa-angle-right"></i> <strong>Mail:</strong> ugo17190@gmail.com</li>
-                    </ul>
-                    <ul>
-                        <li><i class="fas fa-angle-right"></i> <strong>Age:</strong> 31 ans</li>
-                    </ul>
-                    <p>
-                    Passionné depuis longtemps dans le materiel analogique et informatique, aimant bidouiller et résoudre des énigmes, c'est naturellement que je me suis tourné vers le web.
-                    Curieux, structuré et créatif, je sais être quelque peu obstiné lorsqu'il s'agit de comprendre un problème et de le résoudre. Ayant une dizaine d'années de pratique de piano j'ai su faire
-                    preuve de patience lorsqu'il s'agissait d'apprendre de nouveaux langages et d'en maîtriser les concepts.
-                    </p>
-                </div>
-            </section>
-
-            <!-- ======= Skills Section ======= -->
-            <section id="skills" class="skills">
-                <div class="container">
-
-                    <div class="section-title">
-                        <h2>Compétences</h2>
-                        <p>Vous retrouverez ici les compétences que j'ai pu me construire dans le développement web ainsi que dans le graphisme par le biais de mes formations, mes experiences en entreprise ainsi que des projet pro.</p>
-                    </div>
-
-
-                    <figure>
-                        <img src="img/logo web/php.svg" alt="logo php">
-                        <figcaption class="text-center bold">PHP</figcaption>
-                    </figure>
-
-                    <figure>
-                        <img src="img/logo web/javascript.svg" alt="logo JavaScript">
-                        <figcaption class="text-center bold">JavaScript</figcaption>
-                    </figure>
-
-                    <figure>
-                        <img src="img/logo web/css.svg" alt="logo CSS">
-                        <figcaption class="text-center bold">CSS</figcaption>
-                    </figure>
-
-                    <figure>
-                        <img src="img/logo web/jquery.svg" alt="logo J Query">
-                        <figcaption class="text-center bold">jQuery</figcaption>
-                    </figure>
-
-                    <figure>
-                        <img src="img/logo web/typescript.svg" alt="logo de typescript">
-                        <figcaption class="text-center bold">Typescript</figcaption>
-                    </figure>
-
-                    <figure>
-                        <img src="img/logo web/symfony.svg" alt="logo Symfony">
-                        <figcaption class="text-center bold">Symfony</figcaption>
-                    </figure>
-
-                    <figure>
-                        <img src="img/logo web/angular.svg" alt="logo Angular">
-                        <figcaption class="text-center bold">Angular</figcaption>
-                    </figure>
-
-                    <figure>
-                        <img src="img/logo web/sql.svg" alt="logo MySQL">
-                        <figcaption class="text-center bold">MySQL</figcaption>
-                    </figure>
-
-                    <figure>
-                        <img src="img/logo web/illustrator.svg" alt="logo Illustrator">
-                        <figcaption class="text-center bold">Illustrator</figcaption>
-                    </figure>
-
-                    <figure>
-                        <img src="img/logo web/photoshop.svg" alt="logo Photoshop">
-                        <figcaption class="text-center bold">Photoshop</figcaption>
-                    </figure>
-
-                    <figure>
-                        <img src="img/logo web/bootstrap.svg" alt="logo Bootstrap">
-                        <figcaption class="text-center bold">Bootstrap</figcaption>
-                    </figure>
-                </div>
-            </section>
-
-            <!-- ======= Resume ======= -->
-            <section id="resume" class="resume">
-                <div class="container">
-
-                    <div class="section-title">
-                        <h2>Expériences</h2>
-                        <p>Vous pouvez retrouver ici les principales expériences qui ont forgé mon caractère, mon savoir-faire ainsi que mon savoir être dans des projets collectifs et individuels.</p>
-                    </div>
-
-                    <div class="resume-col">
-                        <h3 class="resume-title">Etudes</h3>
-                        <div class="resume-item">
-                            <h4>Concepteur Développeur d'Application</h4>
-                            <h5>3w Academy</h5>
-                            <p><em>2022 - 2023</em></p>
-                            <p>Formation en alternance de développement d'applications web orienté back-end / UML avec la sélection d'un framework back : Symfony.</p>
-                        </div>
-                        <div class="resume-item">
-                            <h4>Full Stack Developper</h4>
-                            <h5>3w Academy</h5>
-                            <p><em>2021 - 2022</em></p>
-                            <p>Formation en alternance de développement d'applications web et apprentissage de 2 frameworks : Angular & Symfony.</p>
-                        </div>
-                        <div class="resume-item">
-                            <h4>Formation developpeur web</h4>
-                            <h5>3w Academy - Marseille</h5>
-                            <p><em>2020</em></p>
-                            <p>Formation d'initiation au code d'une durée de 400h. Langages appris&nbsp;: MySQL, PHP vanilla, JavaScript vanilla, CSS, HTML. Apprentissage de Symfony &amp; Bootstrap.</p>
-                        </div>
-                        <div class="resume-item">
-                            <h4>BTS Communication</h4>
-                            <h5>Inseec - Sup de Pub - Bordeaux</h5>
-                            <p><em>2014 - 2016</em></p>
-                            <p>Ce BTS m'a permis de développer des compétences de graphisme déjà entamées l'année précédente à l'Iscom Toulouse.
-                                J'ai également appris à élaborer des plans de communication pour tous types de projets. Plus encore, cela a fait évoluer mon esprit créatif.</p>
-                        </div>
-
-                        <h3 class="resume-title">Associatif</h3>
-                        <div class="resume-item">
-                            <h4>Graphiste</h4>
-                            <h5>Groupe de musique - Odzie &amp; the Newtones</h5>
-                            <p><em>2018 - 2020</em></p>
-                            <p>Chargé de la direction artistique et graphique du projet. Création de nombreux supports de communication tels que : Logo, affiches, pochette cd, livrets cd, dossier de presse...</p>
-                            <p><a href="https://drive.google.com/open?id=1FujHK5kxtk_hvXZjZ-LfO_y89QeJWmsw" target="blank" rel="noreferrer" title="Lien vers le book de Ugo Barathe">Exemples dans mon book</a></p>
-                        </div>
-                        <div class="resume-item">
-                            <h4>Graphiste &amp; Chargé de communication</h4>
-                            <h5>Association - Adieu Panurge</h5>
-                            <p><em>2018 - 2020</em></p>
-                            <p>Chargé de la direction artistique et graphique de l’association. Création de nombreux supports de communication tels que : site internet, logos, dossiers de subvention, livret cd, affiches...</p>
-                            <a href="https://drive.google.com/open?id=1FujHK5kxtk_hvXZjZ-LfO_y89QeJWmsw" target="blank" rel="noreferrer" title="Lien vers le book de Ugo Barathe">Exemples dans mon book</a>
-                        </div>
-                    </div>
-
-                    <div class="resume-col">
-                        <h3 class="resume-title">Experiences pro</h3>
-
-                        <div class="resume-item">
-                            <h4>Developpeur Full Stack</h4>
-                            <h5>Hey Miam (projet perso) - Marseille</h5>
-                            <p><em>2023</em></p>
-                            <p>Développement d’une application entière en 
-                                autonomie. Des maquettes au front en passant par les 
-                                schémas de base, le back, ainsi qu’une API faite sans 
-                                librairie sur Symfony.</p>
-                            <p>Stacks : <strong>Symfony</strong> / <strong>Angular</strong>.</p>
-                            <p><em><strong>Démo sur demande</strong></em></p>
-                        </div>
-
-                        <div class="resume-item">
-                            <h4>Developpeur Symfony</h4>
-                            <h5>Coockpit - Marseille</h5>
-                            <p><em>2022 - 2023</em></p>
-                            <p>Développement en autonomie de l’ERP de Coockpit. Création de module entier, travail sur la base de donnée, débug, UI/UX, amélioration de l’existant.</p>
-                            <p>Stacks : <strong>Symfony</strong> / <strong>Twig</strong> / <strong>Bootstrap</strong>.</p>
-                        </div>
-
-                        <div class="resume-item">
-                            <h4>Developpeur Full Stack</h4>
-                            <h5>Cryomédica</h5>
-                            <p><em>Août 2022</em></p>
-                            <p>En tant que freelance j'ai développé un site vitrine, pour une entreprise qui vend des cabines de cryothérapie, livré avec un back office exhaustif permettant d'avoir la main sur une gestion du site complète.</p>
-                            <p>Codé en <strong>Symfony 6</strong> et Twig, avec bootstrap, JS et jQuery.</p>
-                        </div>
-
-                        <div class="resume-item">
-                            <h4>Developpeur Full Stack</h4>
-                            <h5>Rame Océan</h5>
-                            <p><em>Juillet 2022</em></p>
-                            <p>Elaboration complète d’un site vitrine ainsi que d’un
-                                back office exhaustif pour que l’artisan gère son site de
-                                manière autonome. Utilisation de Bootstrap, Php,
-                                Javascript, Html, Css, MySql.</p>
-                            <p>Codé en php et js <strong>vanilla</strong>.</p>
-                        </div>
-
-                        <div class="resume-item">
-                            <h4>Developpeur Full Stack</h4>
-                            <h5>So Buzz - Marseille</h5>
-                            <p><em>2021 - 2022</em></p>
-                            <p>Développement en autonomie de jeux concours pour
-                                des grands comptes sur réseaux sociaux et sites dédiés.
-                                Débug, mise en place, lancement de jeux, travail sur le
-                                fonctionnement et le rendu.</p>
-                            <p>Clients notables : ARS, Publicis,  Primonial, Cenpac, La Poste, Glenat</p>
-                            <p>Stacks : <strong>Symfony</strong> et <strong>Angular</strong>.</p>
-                        </div>
-
-                        <div class="resume-item">
-                            <h4>Développeur / Intégrateur</h4>
-                            <h5>Nic L Elec - Aix-en-Provence</h5>
-                            <p><em>2021 (1mois)</em></p>
-                            <p>Elaboration complète d’un site vitrine ainsi que d’un
-                                back office exhaustif pour que l’artisan gère son site de
-                                manière autonome. Utilisation de Bootstrap, Php,
-                                Javascript, Html, Css, MySql.</p>
-                            <p>Codé en php et js <strong>vanilla</strong>.</p>
-                        </div>
-
-                        <div class="resume-item">
-                            <h4>Graphiste &amp; Compositeur</h4>
-                            <h5>Kaizen Mouse</h5>
-                            <p><em>2019 - 2021</em></p>
-                            <p>Auto-entreprise de communication et de composition de musique libre de droits.
-                                J'ai réalisé des projets pour plusieurs entreprises comme Sigmatopo, Eiffage,
-                                Syspertec Communication ainsi que la ville de Bordeaux.</p>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-            <!-- ======= Projects ======= -->
-            <section id="projects">
-                <div class="container">
-
-                    <h2 class="text-center">Projets perso</h2>
-
-                    <article class="project-item-2">
-                        <h3>Echoes</h3>
-                        <h4>Symfony / Twig</h4>
-                        <br><em>En test</em>
-                        <div class="project-item-content">
-                            <p>Site vitrine en symfony/twig avec back-office de gestion pour une association sur Marseille. </p>
-                        </div>
-                        <a href="https://www.kaizenmouse.com" target="_blank" rel="noreferrer" title="Lien vers le site de Rame océan"><i class="icon-web"></i></a>
-                        <a href="https://github.com/UgoBar/asso-echoes" target="_blank" rel="noreferrer" title="Lien vers le git du site de Echoes"><i class="icon-git"></i></a>
-                    </article>
-
-                    <article class="project-item-2">
-                        <h3>Hey Miam</h3>
-                        <h4>Symfony / Angular / Figma</h4>
-                        <div class="project-item-content">
-                            <p>Application d'organisation d'évènements entre amis. J'ai réalisé toute la conception graphique ainsi que l'application dans sa globalité : Back office, API en Symfony et application front en Angular.</p>
-                            <p><strong>Démo du code et de l'application sur demande</strong></p>
-                        </div>
-                    </article>
-
-                    <article class="project-item-2">
-                        <h3>Cryomédica</h3>
-                        <h4>Symfony / Twig</h4>
-                        <div class="project-item-content">
-                            <p>Site vitrine en symfony/twig avec back-office de gestion pour une entreprise de vente de cabine de cryothérapie.</p>
-                        </div>
-                        <a href="https://www.cryomedica.fr" target="_blank" rel="noreferrer" title="Lien vers le site de Cryomédica"><i class="icon-web"></i></a>
-                        <a href="https://github.com/UgoBar/cryomedica" target="_blank" rel="noreferrer" title="Lien vers le git de ce projet"><i class="icon-git"></i></a>
-                    </article>
-
-                    <article class="project-item-1">
-                        <h3>Ce site</h3>
-                        <h4>Dev Front-end</h4>
-                        <div class="project-item-content">
-                            <p>Site de présentation de mes expériences.</p>
-                            <p>Site codé en js <em>Vanilla</em></p>
-                        </div>
-                        <a href="https://github.com/UgoBar/Cv" target="_blank" rel="noreferrer" title="Lien vers le git de ce projet"><i class="icon-git"></i></a>
-                    </article>
-
-                    <article class="project-item-2">
-                        <h3>Rame Océan</h3>
-                        <h4>Dev full stack (php / js)</h4>
-                        <div class="project-item-content">
-                            <p>Projet de site vitrine avec un back-office complet pour une gestion autonome du site de rame océanique.</p>
-                            <p>Site réalisé en php et js vanilla.</p>
-                        </div>
-                        <a href="https://www.rameocean.fr" target="_blank" rel="noreferrer" title="Lien vers le site de Rame océan"><i class="icon-web"></i></a>
-                        <a href="https://github.com/UgoBar/rameocean" target="_blank" rel="noreferrer" title="Lien vers le git de ce projet"><i class="icon-git"></i></a>
-                    </article>
-
-                    <article class="project-item-2">
-                        <h3>Nic L Elec</h3>
-                        <h4>Dev full stack (php / js)</h4>
-                        <div class="project-item-content">
-                            <p>Projet de site vitrine avec un back-office complet pour une gestion autonome du site par l'artisan.</p>
-                            <p>Site réalisé en langage vanilla (js / php / html / css)</p>
-                        </div>
-                        <a href="https://www.nic-l-elec.fr" target="_blank" rel="noreferrer" title="Lien vers le site de Nic.L Elec"><i class="icon-web"></i></a>
-                        <a href="https://github.com/UgoBar/nic-l-elec" target="_blank" rel="noreferrer" title="Lien vers le git de ce projet"><i class="icon-git"></i></a>
-                    </article>
-
-                    <article class="project-item-3">
-                        <h3>Aria</h3>
-                        <h4>Symfony / React / ApiPlatform</h4>
-                        <br><em>En friche</em>
-                        <div class="project-item-content">
-                            <p>Projet de gestion de fiches personnage pour le jeu de rôle Aria</p>
-                        </div>
-                        <a href="https://github.com/Jgruet/Aria_companion" target="_blank" rel="noreferrer" title="Lien vers le git de ce projet"><i class="icon-git"></i></a>
-                    </article>
-
-                    <article class="project-item-4">
-                        <h3>Gestion de panier</h3>
-                        <h4>Développeur full stack</h4>
-                        <div class="project-item-content">
-                            <p>Mini site de eCommerce pour créer un compte, afficher des articles et créer un panier dans le cadre de ma formation à la 3WA</p>
-                        </div>
-                        <a href="https://github.com/UgoBar/eCommerce" target="_blank" rel="noreferrer" title="Lien vers le git de ce projet"><i class="icon-git"></i></a>
-                    </article>
-                </div>
-            </section>
-
-        </main>
-
-        <!-- ======= Footer ======= -->
-        <footer id="footer">
-            <div class="container">
-                <h2>Ugo Barathe</h2>
-                <p>06 68 99 88 59</p>
-                <a href="mailto:ugo17190@gmail.com" rel="noreferrer" title="Envoyez un mail à Ugo Barathe">ugo17190@gmail.com</a>
-                <a href="https://github.com/UgoBar" target="blank" rel="noreferrer" title="Lien vers le git de Ugo Barathe"><i class="icon-git"></i></a>
-                <a href="https://www.linkedin.com/in/ugo-barathe-022684129/" target="blank" rel="noreferrer" title="Lien vers le LinkedIn de Ugo Barathe"><i class="icon-linkedin"></i></a>
+    <div class="splash-half splash-half--dev" data-target="dev">
+        <div></div>
+        <div style="text-align: right; margin-left: auto;">
+            <div class="splash-label">DEV</div>
+            <div class="splash-sub" style="margin-left: auto;">Développeur web — Symfony, Nuxt, freelance. Plateformes
+                SaaS et frontend sur mesure.
             </div>
-        </footer>
+            <div class="splash-cta" style="justify-content: flex-end;">
+                <span>Ou des claviers ?</span>
+                <span class="splash-cta-arrow">→</span>
+            </div>
+        </div>
+    </div>
 
-        <script src="js/main.js"></script>
+    <div class="splash-photo">
+        <div class="splash-photo-tilt">
+            <img src="images/ugo.webp" alt="Ugo"/>
+            <div class="splash-photo-spotlight"></div>
+            <div class="splash-photo-glow"></div>
+        </div>
+    </div>
 
-    </body>
+    <div class="splash-hint">
+        <span class="splash-hint-left">Deux salles</span>
+        <span class="splash-hint-right">Deux ambiances</span>
+    </div>
+</div>
+
+<canvas id="particles"></canvas>
+
+<div class="container">
+    <header>
+        <div class="logo">Ugo Barathe<span class="dot"></span></div>
+    </header>
+
+    <button class="toggle is-hidden" id="toggle" aria-label="Changer d'univers">
+        <div class="toggle-labels">
+            <span>DEV</span>
+            <span>MUS</span>
+        </div>
+        <div class="toggle-thumb" id="thumb">
+            <span data-mode-text data-music="♪" data-dev="</>">♪</span>
+        </div>
+    </button>
+
+    <!-- HERO ------------------------------------------------------- -->
+    <section class="hero">
+        <div class="hero-tag" data-mode-text data-music="Sessions studio" data-dev="// hello.world">Sessions studio
+        </div>
+        <h1>
+            Ugo<br/>
+            <span class="accent" data-mode-text data-music="Piano" data-dev="builds()">Piano</span>
+        </h1>
+        <div class="hero-role" data-mode-text data-music="Musicien & compositeur — live, studio, musique à l'image"
+             data-dev="Développeur web — Symfony, Nuxt, freelance.">Musicien &amp; compositeur — live, studio, musique à
+            l'image
+        </div>
+        <div class="hero-meta">
+            <div>Marseille</div>
+            <div data-mode-text data-music="Auto-didacte" data-dev="Auto-entrepreneur">Auto-didacte
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT ------------------------------------------------------ -->
+    <section class="section">
+        <div class="section-label" data-mode-text data-music="01 / À propos" data-dev="// 01 — about()">01 / À propos
+        </div>
+        <h2 class="section-title" data-mode-text data-music="Deux pratiques, un seul bureau."
+            data-dev="Deux outils, un même cerveau.">Deux pratiques, un seul bureau.</h2>
+        <div class="about">
+            <div class="about-image">
+                <img id="about-img" src="images/music-about.webp" alt="" data-music="images/music-about.webp"
+                     data-dev="images/dev-about.webp"/>
+                <span class="about-image-label" data-mode-text data-music="[Marseille · 2024]"
+                      data-dev="[Setup · 2024]">[Marseille · 2024]</span>
+            </div>
+            <div class="about-text">
+                <p data-mode-text
+                   data-music="J'écris de la musique depuis des années mais je suis pianiste avant tout. J'ai joué dans des styles très variés : rock, folk, reggae, rap. J'ai composé pour orchestre symphonique et passé beaucoup d'heures en studio, de l'enregistrement au mixage. Bref, j'aime les boutons, j'aime le son, j'aime les claviers."
+                   data-dev="J'écris du code pour des web apps, des sites vitrines ou des SaaS. Symfony en back, Nuxt/Vue en front. J'aime toucher aux JS/CSS pour les animations comme au bash opaque pour la gestion des serveurs.">
+                    J'écris de la musique depuis des années mais je suis pianiste avant tout. J'ai joué dans des styles
+                    très variés : rock, folk, reggae, rap. J'ai composé pour orchestre symphonique et passé beaucoup
+                    d'heures en studio, de l'enregistrement au mixage. Bref, j'aime les boutons, j'aime le son, j'aime
+                    les claviers.</p>
+                <p data-mode-text
+                   data-music="Sur scène avec des groupes live, en studio pour la musique à l'image. Aujourd'hui je compose un album de rock progressif."
+                   data-dev="Devant une feuille pour penser l'architecture, derrière mon clavier pour la modéliser. Aujourd'hui développeur pour Cadeo, un SaaS marketing pour booster les avis Google.">
+                    Sur scène avec des groupes live, en studio pour la musique à l'image. Aujourd'hui je compose un
+                    album de rock progressif.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJETS --------------------------------------------------- -->
+    <section class="section">
+        <div class="section-label" data-mode-text data-music="02 / Projets musique" data-dev="// 02 — projects()">02 /
+            Projets musique
+        </div>
+        <h2 class="section-title" data-mode-text data-music="Ce que je fais sonner." data-dev="Ce que je fais dev.">Ce
+            que joue.</h2>
+
+        <div class="projects" id="projects-grid">
+            <!-- Projets injectés en JS pour faciliter le swap mode -->
+        </div>
+    </section>
+
+    <!-- FOOTER ---------------------------------------------------- -->
+    <footer>
+        <div class="contact">
+            <p style="margin-bottom: 16px;" data-mode-text data-music="Envie de parler des projets ?"
+               data-dev="Envie de parler des projets ?">Envie de parler des projets ?</p>
+            <button class="contact-btn" id="contact-btn" type="button" aria-label="Afficher mon email">
+                <span class="contact-btn-label">Me contacter</span>
+                <span class="contact-btn-arrow">→</span>
+            </button>
+        </div>
+        <div>
+            <p>© 2026 — Ugo</p>
+            <p style="margin-top: 8px;" data-mode-text data-music="Composé à Marseille" data-dev="Codé à Marseille">
+                Composé à Marseille</p>
+        </div>
+    </footer>
+</div>
+
+<!-- Overlay pour la transition -->
+<div class="reveal" id="reveal">
+    <div class="reveal-bg" id="reveal-bg"></div>
+    <div class="reveal-mark" id="reveal-mark">♪</div>
+</div>
+
+<script>
+    /* ==================================================================
+       DONNÉES PROJETS
+       À éditer selon tes vrais projets/liens
+    ================================================================== */
+    const PROJECTS = {
+        music: [
+            {
+                tag: "Composition",
+                title: "Musique à l'image",
+                image: "images/music-image.webp",
+                desc: "Composition et arrangement classique pour de la musique à l'image.",
+                mediaLabel: "REEL",
+                links: [
+                    {label: "SoundCloud", href: "https://on.soundcloud.com/ohE5OShBkyuQubj7Rs"},
+                ],
+            },
+            {
+                tag: "Live · Groupe",
+                title: "Toto et les Sauvages",
+                image: "images/ttls.webp",
+                desc: "Groupe de hippie pop dans lequel j'étais multi-instrumentiste, mais surtout pianiste.",
+                mediaLabel: "LIVE",
+                links: [
+                    {label: "YouTube", href: "https://youtu.be/yvq8Y4rn0sI?si=PzxU98TuHblprWdc"},
+                    {label: "Spotify", href: "https://open.spotify.com/intl-fr/artist/54D8W6eH9XVFIg6TaQlEFz"},
+                ],
+            },
+            {
+                tag: "Live · Groupe",
+                title: "Odzie and the Newtones",
+                image: "images/odzie.webp",
+                desc: "Formation live d'un groupe de hip-hop (4 musiciens et un rappeur) dans lequel j'étais pianiste et compositeur.",
+                mediaLabel: "LIVE",
+                links: [
+                    {label: "Idyllique", href: "https://www.youtube.com/watch?v=lElgTXrbPfE"},
+                    {label: "Zurich", href: "https://youtu.be/PhSiBuABkDM?si=9WeJA2VEn-VwQp44"},
+                ],
+            },
+            {
+                tag: "Live · Groupe",
+                title: "Around Blue (WIP)",
+                image: "images/prog.webp",
+                desc: "Album de rock progressif en cours de création. Dans l'univers de Pink Floyd / Supertramp. On fait des morceaux de 8 min quoi.",
+                mediaLabel: "WIP",
+                links: [],
+            },
+        ],
+        dev: [
+            {
+                tag: "SaaS · Nuxt + Symfony",
+                title: "Cadeo",
+                image: "images/cadeo.webp",
+                desc: "SaaS marketing pour aider les commerçants à booster leurs avis Google et les manager au quotidien.",
+                links: [],
+            },
+            {
+                tag: "Web app · Nuxt",
+                title: "Bag Storage Marseille",
+                image: "images/bags.webp",
+                desc: "Web app de conciergerie personnalisée pour une boutique à Marseille.",
+                links: [
+                    {label: "Site live", href: "https://marseille-luggage.vercel.app/"},
+                ],
+            },
+            {
+                tag: "Web app · Nuxt + Symfony",
+                title: "Mulster",
+                image: "images/mulster.webp",
+                desc: "Web app de location de matériel de musique, faite from scratch avec un back office de gestion du catalogue et du blog.",
+                links: [
+                    {label: "Site live", href: "https://www.mulster.fr/"},
+                ],
+            },
+            {
+                tag: "Site + back office · Symfony",
+                title: "Echoes",
+                image: "images/echoes.webp",
+                desc: "Site d'une association marseillaise qui anime des ateliers radio en faisant des podcasts avec et pour les seniors. Avec back office de gestion.",
+                links: [
+                    {label: "Site live", href: "https://asso-echoes.fr/"},
+                ],
+            },
+        ],
+    };
+
+    const SECTION_TITLES = {
+        music: {label: "02 / Projets musique", title: "Ce que je joue."},
+        dev: {label: "// 02 — projects()", title: "Ce que je dev."},
+    };
+
+    /* ==================================================================
+       RENDU PROJETS
+    ================================================================== */
+    function renderProjects(mode) {
+        const grid = document.getElementById("projects-grid");
+        grid.innerHTML = "";
+
+        PROJECTS[mode].forEach((p, i) => {
+            const card = document.createElement("article");
+            card.className = "project";
+            card.style.opacity = "0";
+
+            const linksHTML = p.links
+                .map((l) =>
+                    l.href
+                        ? `<a href="${l.href}" target="_blank" rel="noopener">${l.label} →</a>`
+                        : `<span>${l.label}</span>`
+                )
+                .join("");
+
+            const imageHTML = p.image
+                ? `<img src="${p.image}" alt="${p.title}" loading="lazy" />`
+                : `<span class="project-image-placeholder">[ screenshot · ${p.title} ]</span>`;
+
+            const linksDiv = linksHTML ? `<div class="project-links">${linksHTML}</div>` : "";
+
+            card.innerHTML = `
+      <div class="project-image">
+        ${imageHTML}
+      </div>
+      <div class="project-tag">${p.tag}</div>
+      <h3>${p.title}</h3>
+      <p>${p.desc}</p>
+      ${linksDiv}
+    `;
+            grid.appendChild(card);
+
+            gsap.to(card, {
+                opacity: 1,
+                y: 0,
+                duration: 0.6,
+                delay: i * 0.08,
+                ease: "power2.out",
+            });
+            gsap.from(card, {y: 24, duration: 0.6, delay: i * 0.08, ease: "power2.out"});
+        });
+    }
+
+    /* ==================================================================
+       SWAP DES TEXTES SELON LE MODE
+    ================================================================== */
+    function swapTexts(mode) {
+        document.querySelectorAll("[data-mode-text]").forEach((el) => {
+            const next = el.dataset[mode];
+            if (next !== undefined) el.textContent = next;
+        });
+
+        // Swap des images qui ont une variante par mode (data-music / data-dev sur l'img)
+        document.querySelectorAll("img[data-music][data-dev]").forEach((img) => {
+            const next = img.dataset[mode];
+            if (next && img.src.indexOf(next) === -1) img.src = next;
+        });
+
+        const titles = SECTION_TITLES[mode];
+        // Mise à jour titres section projets (déjà géré via data-attrs ailleurs)
+    }
+
+    /* ==================================================================
+       PARTICULES — canvas, change de comportement selon mode
+    ================================================================== */
+    const canvas = document.getElementById("particles");
+    const ctx = canvas.getContext("2d");
+    let particles = [];
+    let particleMode = "music";
+
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+
+    function createParticles(mode) {
+        particles = [];
+        const count = mode === "music" ? 60 : 40;
+        for (let i = 0; i < count; i++) {
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                vx: (Math.random() - 0.5) * (mode === "music" ? 0.15 : 0.05),
+                vy: (Math.random() - 0.5) * (mode === "music" ? 0.15 : 0.05),
+                size: mode === "music" ? Math.random() * 1.8 + 0.5 : 1,
+                alpha: Math.random() * 0.6 + 0.2,
+                pulse: Math.random() * Math.PI * 2,
+            });
+        }
+        particleMode = mode;
+    }
+
+    createParticles("music");
+
+    function animateParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        const color = particleMode === "music" ? "250, 207, 52" : "21, 128, 61";
+
+        particles.forEach((p) => {
+            p.x += p.vx;
+            p.y += p.vy;
+            p.pulse += 0.02;
+
+            if (p.x < 0) p.x = canvas.width;
+            if (p.x > canvas.width) p.x = 0;
+            if (p.y < 0) p.y = canvas.height;
+            if (p.y > canvas.height) p.y = 0;
+
+            const a = particleMode === "music"
+                ? p.alpha * (0.5 + 0.5 * Math.sin(p.pulse))
+                : p.alpha * 0.5;
+
+            ctx.beginPath();
+            if (particleMode === "music") {
+                // Étoiles douces
+                ctx.fillStyle = `rgba(${color}, ${a})`;
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fill();
+            } else {
+                // Points de grille technique
+                ctx.fillStyle = `rgba(${color}, ${a * 0.4})`;
+                ctx.fillRect(p.x, p.y, p.size, p.size);
+            }
+        });
+
+        requestAnimationFrame(animateParticles);
+    }
+
+    animateParticles();
+
+    /* ==================================================================
+       TRANSITION D'UNIVERS — la pièce maîtresse
+    ================================================================== */
+    const toggle = document.getElementById("toggle");
+    const reveal = document.getElementById("reveal");
+    const revealBg = document.getElementById("reveal-bg");
+    const revealMark = document.getElementById("reveal-mark");
+    let currentMode = "music";
+    let isAnimating = false;
+
+    const MODE_COLORS = {
+        music: {bg: "#0a0810", fg: "#facf34", mark: "♪"},
+        dev: {bg: "#f5f3ee", fg: "#15803d", mark: "</>"},
+    };
+
+    function transitionTo(nextMode) {
+        if (isAnimating || nextMode === currentMode) return;
+        isAnimating = true;
+
+        const colors = MODE_COLORS[nextMode];
+        revealBg.style.background = colors.bg;
+        revealMark.style.color = colors.fg;
+        revealMark.textContent = colors.mark;
+        revealMark.style.fontFamily = nextMode === "music" ? "Fraunces, serif" : "JetBrains Mono, monospace";
+        revealMark.style.fontStyle = nextMode === "music" ? "italic" : "normal";
+
+        // Position origine du cercle = centre du toggle
+        const rect = toggle.getBoundingClientRect();
+        const originX = rect.left + rect.width / 2;
+        const originY = rect.top + rect.height / 2;
+        const xPct = (originX / window.innerWidth) * 100;
+        const yPct = (originY / window.innerHeight) * 100;
+
+        // Distance max au coin opposé pour couvrir tout l'écran
+        const maxDist = Math.sqrt(
+            Math.max(originX, window.innerWidth - originX) ** 2 +
+            Math.max(originY, window.innerHeight - originY) ** 2
+        );
+
+        reveal.style.transformOrigin = `${xPct}% ${yPct}%`;
+
+        const tl = gsap.timeline({
+            onComplete: () => {
+                isAnimating = false;
+            },
+        });
+
+        // 1. Le cercle se déploie depuis le toggle
+        gsap.set(reveal, {clipPath: `circle(0px at ${xPct}% ${yPct}%)`});
+        gsap.set(revealMark, {opacity: 0, scale: 0.5});
+
+        tl.to(reveal, {
+            clipPath: `circle(${maxDist}px at ${xPct}% ${yPct}%)`,
+            duration: 0.9,
+            ease: "power4.inOut",
+        });
+
+        // 2. Le symbole apparaît au pic
+        tl.to(
+            revealMark,
+            {
+                opacity: 1,
+                scale: 1,
+                duration: 0.35,
+                ease: "power2.out",
+            },
+            "-=0.5"
+        );
+
+        // 3. Au sommet : swap du mode (couleurs, fonts, textes, particules)
+        tl.add(() => {
+            document.body.classList.remove(`mode-${currentMode}`);
+            document.body.classList.add(`mode-${nextMode}`);
+            swapTexts(nextMode);
+            renderProjects(nextMode);
+            createParticles(nextMode);
+
+            // Met à jour le titre de la section projets
+            const sectionLabels = document.querySelectorAll(".section-label");
+            const sectionTitles = document.querySelectorAll(".section-title");
+            if (sectionLabels[1]) sectionLabels[1].textContent = SECTION_TITLES[nextMode].label;
+            if (sectionTitles[1]) sectionTitles[1].textContent = SECTION_TITLES[nextMode].title;
+
+            // Met à jour le texte du thumb
+            document.querySelector("[data-mode-text][data-music='♪']").textContent =
+                nextMode === "music" ? "♪" : "</>";
+
+            currentMode = nextMode;
+        });
+
+        // 4. Le symbole s'efface
+        tl.to(revealMark, {
+            opacity: 0,
+            scale: 1.2,
+            duration: 0.3,
+            ease: "power2.in",
+        });
+
+        // 5. Le cercle se replie côté opposé
+        const exitX = 100 - xPct;
+        const exitY = 100 - yPct;
+        tl.to(reveal, {
+            clipPath: `circle(0px at ${exitX}% ${exitY}%)`,
+            duration: 0.8,
+            ease: "power4.inOut",
+        });
+    }
+
+    toggle.addEventListener("click", () => {
+        transitionTo(currentMode === "music" ? "dev" : "music");
+    });
+
+    /* ==================================================================
+       SPLASH SCREEN — choix initial + animation de sortie
+    ================================================================== */
+    const splash = document.getElementById("splash");
+    const toggleEl = document.getElementById("toggle");
+
+    function dismissSplash(chosenMode) {
+        // Si l'utilisateur a choisi "dev", on swap le mode AVANT l'animation
+        // (le site dessous sera déjà dans le bon état quand la splash se retire)
+        if (chosenMode === "dev") {
+            document.body.classList.remove("mode-music");
+            document.body.classList.add("mode-dev");
+            swapTexts("dev");
+            renderProjects("dev");
+            createParticles("dev");
+
+            // Mise à jour des titres de section (idx 1 = section projets)
+            const sectionLabels = document.querySelectorAll(".section-label");
+            const sectionTitles = document.querySelectorAll(".section-title");
+            if (sectionLabels[1]) sectionLabels[1].textContent = SECTION_TITLES.dev.label;
+            if (sectionTitles[1]) sectionTitles[1].textContent = SECTION_TITLES.dev.title;
+            document.querySelector("[data-mode-text][data-music='♪']").textContent = "</>";
+
+            currentMode = "dev";
+        }
+
+        splash.classList.add("is-leaving");
+
+        const chosenSelector = chosenMode === "music" ? ".splash-half--music" : ".splash-half--dev";
+        const otherSelector = chosenMode === "music" ? ".splash-half--dev" : ".splash-half--music";
+
+        const tl = gsap.timeline({
+            onComplete: () => {
+                splash.style.display = "none";
+                toggleEl.classList.remove("is-hidden");
+                playSiteEntrance();
+            },
+        });
+
+        // 1. La moitié non-choisie sort par son côté
+        tl.to(otherSelector, {
+            xPercent: chosenMode === "music" ? 100 : -100,
+            duration: 0.7,
+            ease: "power3.inOut",
+        });
+
+        // 2. La photo se rétrécit légèrement et fade
+        tl.to(
+            ".splash-photo",
+            {
+                scale: 0.85,
+                opacity: 0,
+                duration: 0.5,
+                ease: "power2.in",
+            },
+            "-=0.55"
+        );
+
+        // 3. Brand + hint disparaissent
+        tl.to(
+            [".splash-brand", ".splash-hint"],
+            {
+                opacity: 0,
+                y: -10,
+                duration: 0.4,
+                ease: "power2.in",
+            },
+            "-=0.5"
+        );
+
+        // 4. La moitié choisie remonte pour révéler le site
+        tl.to(
+            chosenSelector,
+            {
+                yPercent: -100,
+                duration: 0.9,
+                ease: "power4.inOut",
+            },
+            "-=0.3"
+        );
+    }
+
+    // Bind les clics sur chaque moitié
+    document.querySelectorAll(".splash-half").forEach((half) => {
+        half.addEventListener("click", () => {
+            dismissSplash(half.dataset.target);
+        });
+    });
+
+    // Tracking souris pour spotlight (X, Y) + tilt 3D
+    const splashPhoto = splash.querySelector(".splash-photo");
+    splash.addEventListener("mousemove", (e) => {
+        const rect = splash.getBoundingClientRect();
+        const xPct = ((e.clientX - rect.left) / rect.width) * 100;
+        const yPct = ((e.clientY - rect.top) / rect.height) * 100;
+
+        // Tilt 3D : amplitude modeste pour rester crédible (~ ±6°)
+        const tiltY = ((xPct - 50) / 50) * 6;   // rotateY : tourne autour de l'axe vertical
+        const tiltX = ((50 - yPct) / 50) * 4.5; // rotateX : tourne autour de l'axe horizontal
+
+        splashPhoto.style.setProperty("--mx", xPct + "%");
+        splashPhoto.style.setProperty("--my", yPct + "%");
+        splashPhoto.style.setProperty("--ty", tiltY + "deg");
+        splashPhoto.style.setProperty("--tx", tiltX + "deg");
+    });
+
+    splash.addEventListener("mouseleave", () => {
+        splashPhoto.style.setProperty("--mx", "50%");
+        splashPhoto.style.setProperty("--my", "50%");
+        splashPhoto.style.setProperty("--tx", "0deg");
+        splashPhoto.style.setProperty("--ty", "0deg");
+    });
+
+    /* ==================================================================
+       INIT
+    ================================================================== */
+    renderProjects("music");
+
+    // État initial : le site sous la splash est invisible, sera animé à l'entrée
+    gsap.set([".logo", ".hero-tag", ".hero h1", ".hero-role", ".hero-meta"], {opacity: 0});
+
+    function playSiteEntrance() {
+        gsap.to(".logo", {opacity: 1, y: 0, duration: 0.6, ease: "power2.out"});
+        gsap.from(".logo", {y: -10, duration: 0.6, ease: "power2.out"});
+
+        gsap.to(".hero-tag", {opacity: 1, y: 0, duration: 0.8, delay: 0.2, ease: "power3.out"});
+        gsap.from(".hero-tag", {y: 20, duration: 0.8, delay: 0.2, ease: "power3.out"});
+
+        gsap.to(".hero h1", {opacity: 1, y: 0, duration: 1, delay: 0.3, ease: "power3.out"});
+        gsap.from(".hero h1", {y: 40, duration: 1, delay: 0.3, ease: "power3.out"});
+
+        gsap.to(".hero-role", {opacity: 1, y: 0, duration: 0.8, delay: 0.5, ease: "power3.out"});
+        gsap.from(".hero-role", {y: 20, duration: 0.8, delay: 0.5, ease: "power3.out"});
+
+        gsap.to(".hero-meta", {opacity: 1, y: 0, duration: 0.8, delay: 0.7, ease: "power3.out"});
+        gsap.from(".hero-meta", {y: 20, duration: 0.8, delay: 0.7, ease: "power3.out"});
+    }
+
+    /* ==================================================================
+       RACCOURCI CLAVIER — appuie sur 'M' pour switcher (easter egg)
+    ================================================================== */
+    document.addEventListener("keydown", (e) => {
+        if (e.key.toLowerCase() === "m" && !e.metaKey && !e.ctrlKey) {
+            toggle.click();
+        }
+    });
+
+    /* ==================================================================
+       EMAIL ANTI-SCRAPE — l'email n'apparaît jamais en clair dans le HTML.
+       Il est reconstitué côté client uniquement après un clic utilisateur.
+       Les bots qui crawlent le HTML brut ne voient que la chaîne "Me contacter".
+    ================================================================== */
+    const contactBtn = document.getElementById("contact-btn");
+    if (contactBtn) {
+        contactBtn.addEventListener("click", function () {
+            // Reconstruction de l'email en pièces détachées
+            const localPart = ["u", "g", "o", "1", "7", "1", "9", "0"].join("");
+            const at = String.fromCharCode(64); // @
+            const domain = ["g", "m", "a", "i", "l"].join("") + "." + "com";
+            const email = localPart + at + domain;
+
+            // Affiche l'email et garde-le visible pour copier
+            this.querySelector(".contact-btn-label").textContent = email;
+            this.classList.add("is-revealed");
+
+            // Ouvre le client mail
+            window.location.href = ["ma", "il", "to", ":"].join("") + email;
+        });
+    }
+</script>
+
+</body>
 </html>
